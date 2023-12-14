@@ -1,0 +1,7 @@
+CREATE TABLE 產品表
+(
+品號 CHAR(5),
+品名 NVARCHAR(10) NOT NULL,
+定價 INT,
+PRIMARY KEY (品號)
+)

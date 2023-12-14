@@ -1,0 +1,3 @@
+SELECT 編號, 品號, 數量
+FROM 銷售表
+WHERE 品號 IN ('P0001', 'P0005') AND 數量 BETWEEN 60 AND 90
