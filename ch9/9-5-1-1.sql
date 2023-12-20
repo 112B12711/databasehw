@@ -1,0 +1,6 @@
+CREATE TABLE 員工表
+(編號 CHAR(5),
+姓名 NVARCHAR(10) NOT NULL,
+品號 CHAR(5),
+PRIMARY KEY (編號)
+)

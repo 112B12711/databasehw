@@ -1,0 +1,6 @@
+CREATE TABLE 銷售表
+(品號 CHAR(5),
+品名 NVARCHAR(10) NOT NULL,
+銷售數量 INT,
+PRIMARY KEY (品號)
+)
