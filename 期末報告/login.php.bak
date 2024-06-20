@@ -1,0 +1,55 @@
+<?php
+include 'db.php';
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM Users WHERE username='$username'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['user_id'] = $row['user_id'];
+            header("Location: index.php");
+        } else {
+            echo "密碼錯誤";
+        }
+    } else {
+        echo "使用者名稱不存在";
+    }
+    $conn->close();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>登入</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>圖書借閱系統</h1>
+    </header>
+    <main>
+        <h2>登入</h2>
+        <form method="post" action="">
+            <label for="username">帳號：</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">密碼：</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="登入">
+        </form>
+        <br>
+        <a href="register.php">加入會員</a><br>
+        <a href="forgot_password.php">查詢密碼</a>
+    </main>
+    <footer>
+        <p>圖書借閱系統 &copy; 2024</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>圖書借閱系統 - 借閱記錄</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            margin: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>圖書借閱系統</h1>
+    </header>
+    <main>
+        <h2>借閱記錄</h2>
+        <table>
+            <tr>
+                <th>借閱日期</th>
+                <th>書籍編號</th>
+                <th>書籍名稱</th>
+                <th>到期日期</th>
+            </tr>
+            <tr>
+                <td>2024-06-15</td>
+                <td>001</td>
+                <td>Python Programming</td>
+                <td>2024-07-15</td>
+            </tr>
+            <tr>
+                <td>2024-06-10</td>
+                <td>002</td>
+                <td>Web Development</td>
+                <td>2024-07-10</td>
+            </tr>
+            <!-- More rows can be added dynamically from database -->
+        </table>
+        <a href="borrow.html">借閱圖書</a><br>
+        <a href="return.html">還書</a><br>
+        <a href="index.html">登出</a>
+    </main>
+    <footer>
+        <p>圖書借閱系統 &copy; 2024</p>
+    </footer>
+</body>
+</html>
